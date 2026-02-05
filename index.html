@@ -1,441 +1,428 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+Here is the same page, renamed to **Sarantopoulos Consulting** (title, header, and footer updated accordingly). You can overwrite your existing `index.html` with this.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Arial Unicode MS'}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Arial Unicode MS'; min-height: 16.0px}
-  </style>
+    <meta charset="UTF-8">
+    <title>Sarantopoulos Consulting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sarantopoulos Consulting - technology, data, and security consulting.">
+    <style>
+        :root {
+            --primary: #0b3c5d;
+            --accent: #d9b310;
+            --bg: #f5f7fa;
+            --text: #222;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #ffffff;
+        }
+
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b3c5d 0%, #1f5f8b 50%, #0b3c5d 100%);
+            color: #fff;
+            padding: 3rem 1.2rem 2.5rem;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto 1.7rem;
+            font-size: 1.02rem;
+        }
+
+        .hero .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 0.85rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero .cta-btn:hover {
+            background: #f0cb3f;
+        }
+
+        main {
+            padding: 2.3rem 1.2rem 2.8rem;
+            background: var(--bg);
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 2.5rem;
+            background: #fff;
+            padding: 1.8rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .section h3 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .section p {
+            margin-top: 0.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.4rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #fafafa;
+            border-radius: 6px;
+            padding: 1.2rem 1.1rem;
+        }
+
+        .card h4 {
+            margin: 0 0 0.4rem;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-details p {
+            margin: 0.4rem 0;
+        }
+
+        .contact-note {
+            font-size: 0.88rem;
+            color: #555;
+        }
+
+        form {
+            background: #fafafa;
+            padding: 1.4rem 1.3rem;
+            border-radius: 6px;
+        }
+
+        .form-group {
+            margin-bottom: 0.9rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font: inherit;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(11, 60, 93, 0.12);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .required {
+            color: #c0392b;
+            margin-left: 2px;
+        }
+
+        .small-hint {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        button[type="submit"] {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.7rem 1.6rem;
+            border-radius: 4px;
+            border: none;
+            font: inherit;
+            cursor: pointer;
+            margin-top: 0.4rem;
+        }
+
+        button[type="submit"]:hover {
+            background: #12466b;
+        }
+
+        footer {
+            background: #0b1726;
+            color: #d6dde7;
+            padding: 1.2rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        footer .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;title&gt;COSC Consulting Services&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;meta name="description" content="COSC Consulting Services - technology, data, and security consulting."&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>--primary: #0b3c5d;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>--accent: #d9b310;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>--bg: #f5f7fa;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>--text: #222;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background-color: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 1rem 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>position: sticky;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>z-index: 10;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>header .container {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>max-width: 1100px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>gap: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>header h1 {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>nav a {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-left: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>nav a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>text-decoration: underline;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: linear-gradient(135deg, #0b3c5d 0%, #1f5f8b 50%, #0b3c5d 100%);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 3rem 1.2rem 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.hero .container {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>max-width: 900px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.hero h2 {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 2.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.hero p {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>max-width: 720px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0 auto 1.7rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 1.02rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.hero .cta-btn {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 0.85rem 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.hero .cta-btn:hover {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: #f0cb3f;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>main {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 2.3rem 1.2rem 2.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: var(--bg);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>max-width: 1100px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0 auto 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 1.8rem 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>box-shadow: 0 1px 4px rgba(0,0,0,0.04);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.section h3 {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-bottom: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.section p {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-top: 0.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.grid {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>gap: 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-top: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.card {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: #fafafa;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 1.2rem 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.card h4 {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0 0 0.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 1.05rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.card p {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>ul {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding-left: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>li {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-bottom: 0.35rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.contact-wrapper {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-top: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>@media (max-width: 800px) {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>.contact-wrapper {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.contact-details p {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0.4rem 0;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.contact-note {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 0.88rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #555;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>form {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: #fafafa;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 1.4rem 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.form-group {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-bottom: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>label {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-bottom: 0.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 0.92rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>input[type="text"],</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>input[type="email"],</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>textarea {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 0.6rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border: 1px solid #ccc;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font: inherit;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>transition: border-color 0.15s ease, box-shadow 0.15s ease;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>input[type="text"]:focus,</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>input[type="email"]:focus,</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>textarea:focus {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>outline: none;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-color: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>box-shadow: 0 0 0 2px rgba(11, 60, 93, 0.12);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>textarea {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>min-height: 120px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>resize: vertical;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.required {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #c0392b;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-left: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>.small-hint {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #666;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>button[type="submit"] {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 0.7rem 1.6rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font: inherit;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin-top: 0.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>button[type="submit"]:hover {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: #12466b;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>background: #0b1726;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>color: #d6dde7;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>padding: 1.2rem 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>footer .container {</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>max-width: 1100px;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>gap: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h1&gt;COSC Consulting Services&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;a href="#about"&gt;About&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;a href="#services"&gt;Services&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;a href="#industries"&gt;Industries&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;a href="#contact"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h2&gt;Data&#x2011;driven technology and security advisory&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>COSC Consulting Services supports organizations in designing robust digital architectures,</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>harnessing data and climatology insights, and strengthening information security.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;a href="#contact" class="cta-btn"&gt;Schedule a consultation&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;main&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;section class="section" id="about"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h3&gt;About the firm&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>We integrate academic rigor with practical implementation experience to help universities, public bodies,</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>and businesses make confident technology and data decisions.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Our work spans systems architecture, information security, and environmental data analytics, always with a</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>clear focus on feasibility, governance, and long&#x2011;term maintainability.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;section class="section" id="services"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h3&gt;Core services&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h4&gt;Technology architecture &amp; strategy&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Assessment and design of IT architectures, modernization roadmaps, and integration strategies</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>that align with institutional goals and constraints.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h4&gt;Data &amp; climatology analytics&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Design of data flows, analytical pipelines, and decision&#x2011;support tools incorporating</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>meteorological and climatological information.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h4&gt;Information security advisory&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Network and system hardening, security posture reviews, and pragmatic guidance on policies,</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>controls, and incident preparedness.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h4&gt;Academic &amp; institutional consulting&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Support for digital campus platforms, program design, and governance processes across</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>technology&#x2011;enabled learning environments.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;section class="section" id="industries"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h3&gt;Who we work with&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;li&gt;Universities and research institutes modernizing IT and data infrastructure.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;li&gt;Public&#x2011;sector organizations embedding environmental data into planning and policy.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;li&gt;Businesses seeking to improve security, resilience, and data governance.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;li&gt;Institutions requiring independent review of technology strategies or major investments.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;section class="section" id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;h3&gt;Contact&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="contact-wrapper"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="contact-details"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Share a brief description of your organization, current challenges, and desired timelines.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>You will typically receive a reply within two business days.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Email: &lt;a href="mailto:info@COSC-consulting.example"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>info@COSC-consulting.example&lt;/a&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Location: Athens, Greece</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;p class="contact-note"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Please avoid sending passwords or highly sensitive information via this form.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>A secure channel can be arranged once contact is established.</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;!-- Replace the action URL with your real form endpoint (Formspree, StaticForms, etc.) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;form</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>action="https://example-form-backend.io/f/your-endpoint-id"</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>method="POST"</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;label for="name"&gt;Name&lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;input type="text" id="name" name="name" required placeholder="Your full name"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;label for="email"&gt;Email&lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;input type="email" id="email" name="email" required placeholder="you@example.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="small-hint"&gt;We will use this only to respond to your inquiry.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;label for="organization"&gt;Organization&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;input type="text" id="organization" name="organization" placeholder="Institution or company (optional)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;label for="subject"&gt;Subject&lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;input type="text" id="subject" name="subject" required placeholder="Topic of your inquiry"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;label for="message"&gt;Message&lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;textarea id="message" name="message" required</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>placeholder="Describe your needs, context, and timelines."&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;!-- Simple spam honeypot --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div style="display:none;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;label&gt;Leave this field empty&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;input type="text" name="_gotcha"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;!-- Optional: redirect URL after successful submission, depending on your provider --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;!-- &lt;input type="hidden" name="_redirect" value="https://yourdomain.example/thanks.html"&gt; --&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;button type="submit"&gt;Send message&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/section&gt;</p>
-<p class="p1">&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div&gt;� &lt;span id="year"&gt;&lt;/span&gt; COSC Consulting Services. All rights reserved.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>&lt;div&gt;Site hosted with GitHub Pages.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>// Dynamically set current year in footer</p>
-<p class="p1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>document.getElementById("year").textContent = new Date().getFullYear();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-<p class="p1">COSC</p>
+<header>
+    <div class="container">
+        <h1>Sarantopoulos Consulting</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#industries">Industries</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h2>Data‑driven technology and security advisory</h2>
+        <p>
+            Sarantopoulos Consulting supports organizations in designing robust digital architectures,
+            harnessing data and climatology insights, and strengthening information security.
+        </p>
+        <a href="#contact" class="cta-btn">Schedule a consultation</a>
+    </div>
+</section>
+
+<main>
+    <section class="section" id="about">
+        <h3>About the firm</h3>
+        <p>
+            We integrate academic rigor with practical implementation experience to help universities, public bodies,
+            and businesses make confident technology and data decisions.
+        </p>
+        <p>
+            Our work spans systems architecture, information security, and environmental data analytics, always with a
+            clear focus on feasibility, governance, and long‑term maintainability.
+        </p>
+    </section>
+
+    <section class="section" id="services">
+        <h3>Core services</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Technology architecture & strategy</h4>
+                <p>
+                    Assessment and design of IT architectures, modernization roadmaps, and integration strategies
+                    that align with institutional goals and constraints.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Data & climatology analytics</h4>
+                <p>
+                    Design of data flows, analytical pipelines, and decision‑support tools incorporating
+                    meteorological and climatological information.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Information security advisory</h4>
+                <p>
+                    Network and system hardening, security posture reviews, and pragmatic guidance on policies,
+                    controls, and incident preparedness.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Academic & institutional consulting</h4>
+                <p>
+                    Support for digital campus platforms, program design, and governance processes across
+                    technology‑enabled learning environments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="industries">
+        <h3>Who we work with</h3>
+        <ul>
+            <li>Universities and research institutes modernizing IT and data infrastructure.</li>
+            <li>Public‑sector organizations embedding environmental data into planning and policy.</li>
+            <li>Businesses seeking to improve security, resilience, and data governance.</li>
+            <li>Institutions requiring independent review of technology strategies or major investments.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="contact">
+        <h3>Contact</h3>
+        <div class="contact-wrapper">
+            <div class="contact-details">
+                <p>
+                    Share a brief description of your organization, current challenges, and desired timelines.
+                    You will typically receive a reply within two business days.
+                </p>
+                <p>
+                    Email: <a href="mailto:info@sarantopoulos-consulting.example">
+                    info@sarantopoulos-consulting.example</a><br>
+                    Location: Athens, Greece
+                </p>
+                <p class="contact-note">
+                    Please avoid sending passwords or highly sensitive information via this form.
+                    A secure channel can be arranged once contact is established.
+                </p>
+            </div>
+
+            <div>
+                <!-- Replace the action URL with your real form endpoint (Formspree, StaticForms, etc.) -->
+                <form
+                    action="https://example-form-backend.io/f/your-endpoint-id"
+                    method="POST"
+                >
+                    <div class="form-group">
+                        <label for="name">Name<span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        <div class="small-hint">We will use this only to respond to your inquiry.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input type="text" id="organization" name="organization" placeholder="Institution or company (optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject<span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required placeholder="Topic of your inquiry">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message<span class="required">*</span></label>
+                        <textarea id="message" name="message" required
+                                  placeholder="Describe your needs, context, and timelines."></textarea>
+                    </div>
+
+                    <!-- Simple spam honeypot -->
+                    <div style="display:none;">
+                        <label>Leave this field empty</label>
+                        <input type="text" name="_gotcha">
+                    </div>
+
+                    <!-- Optional: redirect URL after successful submission, depending on your provider -->
+                    <!-- <input type="hidden" name="_redirect" value="https://yourdomain.example/thanks.html"> -->
+
+                    <button type="submit">Send message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div>© <span id="year"></span> Sarantopoulos Consulting. All rights reserved.</div>
+        <div>Site hosted with GitHub Pages.</div>
+    </div>
+</footer>
+
+<script>
+    // Dynamically set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+```
